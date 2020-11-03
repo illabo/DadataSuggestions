@@ -1,3 +1,2 @@
 include ':DadataSuggestions'
-include ':app'
 rootProject.name = "DadataDroidExample"
