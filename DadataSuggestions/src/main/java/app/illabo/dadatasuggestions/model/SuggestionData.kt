@@ -56,7 +56,7 @@ data class SuggestionData (
 	@SerializedName("geo_lat") val geo_lat : Double?,
 	@SerializedName("geo_lon") val geo_lon : Double?,
 	@SerializedName("geoname_id") val geoname_id : String?,
-	@SerializedName("history_values") val history_values : String?,
+	@SerializedName("history_values") val history_values : Array<String>?,
 	@SerializedName("house") val house : String?,
 	@SerializedName("house_fias_id") val house_fias_id : String?,
 	@SerializedName("house_kladr_id") val house_kladr_id : String?,
