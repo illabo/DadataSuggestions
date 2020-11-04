@@ -1,8 +1,8 @@
 package app.illabo.dadatasuggestions
 
-import DadataAddressResponse
 import android.util.Log
 import app.illabo.dadatasuggestions.model.AddressSuggestionRequest
+import app.illabo.dadatasuggestions.model.DadataAddressResponse
 import app.illabo.dadatasuggestions.model.DadataRequest
 import app.illabo.dadatasuggestions.model.ReverseGeocodeRequest
 import app.illabo.dadatasuggestions.networking.ApiHelper

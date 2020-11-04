@@ -1,3 +1,5 @@
+package app.illabo.dadatasuggestions.model
+
 import com.google.gson.annotations.SerializedName
 
 /*

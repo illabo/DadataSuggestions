@@ -1,10 +1,8 @@
 package app.illabo.dadatasuggestions.model
 
-import DadataAddressResponse
 import app.illabo.dadatasuggestions.networking.ApiService
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import retrofit2.Call
 
 class ReverseGeocodeRequest(
     lat: Double,
