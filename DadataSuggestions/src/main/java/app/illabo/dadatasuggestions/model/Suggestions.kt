@@ -14,9 +14,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
-data class Suggestions (
+data class Suggestions(
 
-	@SerializedName("value") val value : String,
-	@SerializedName("unrestricted_value") val unrestricted_value : String,
-	@SerializedName("data") val data : SuggestionData
+	@SerializedName("value") val value: String,
+	@SerializedName("unrestricted_value") val unrestricted_value: String,
+	@SerializedName("data") val data: SuggestionData
 )

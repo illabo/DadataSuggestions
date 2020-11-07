@@ -9,7 +9,7 @@ class ReverseGeocodeRequest(
     lon: Double,
     count: Int = 10,
     language: String? = null
-): DadataRequest<DadataAddressResponse> {
+) : DadataRequest<DadataAddressResponse> {
     @SerializedName("lat")
     @Expose
     private var lat = lat
@@ -42,7 +42,7 @@ class ReverseGeocodeRequest(
     }
 
     fun setLanguage(language: String?): ReverseGeocodeRequest {
-        if (language != null && listOf("en","ru").contains(language)) {
+        if (language != null && listOf("en", "ru").contains(language)) {
             this.language = language
         }
         return this
@@ -53,6 +53,5 @@ class ReverseGeocodeRequest(
     fun getCount() = count
     fun getLanguage() = language
 
-    override fun buildCall(forClient: ApiService)
-        = forClient.getRevGeocode(this)
+    override fun buildCall(forClient: ApiService) = forClient.getRevGeocode(this)
 }
