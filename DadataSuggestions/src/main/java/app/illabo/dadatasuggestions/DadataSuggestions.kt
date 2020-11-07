@@ -7,6 +7,8 @@ import app.illabo.dadatasuggestions.model.DadataRequest
 import app.illabo.dadatasuggestions.model.ReverseGeocodeRequest
 import app.illabo.dadatasuggestions.networking.ApiHelper
 import app.illabo.dadatasuggestions.networking.BackoffCallback
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -55,7 +57,7 @@ class DadataSuggestions(private val token: String) {
                 response: Response<DadataAddressResponse>
             ) {
                 val resBody = response.body() ?: return
-                GlobalScope.launch {
+                CoroutineScope(Dispatchers.Default).launch {
                     completion?.let {
                         it(resBody)
                     }
