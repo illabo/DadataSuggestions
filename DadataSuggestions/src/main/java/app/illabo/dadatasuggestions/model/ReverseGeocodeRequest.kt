@@ -5,10 +5,10 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class ReverseGeocodeRequest(
-    lat: Double,
-    lon: Double,
-    count: Int = 10,
-    language: String? = null
+        lat: Double,
+        lon: Double,
+        count: Int = 10,
+        language: String? = null
 ) : DadataRequest<DadataAddressResponse> {
     @SerializedName("lat")
     @Expose

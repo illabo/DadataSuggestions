@@ -15,5 +15,5 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 
 data class DadataAddressResponse(
-	@SerializedName("suggestions") val suggestions: List<Suggestions>
+		@SerializedName("suggestions") val suggestions: List<Suggestions>
 )

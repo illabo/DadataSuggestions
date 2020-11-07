@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName
 import retrofit2.Call
 
 class AddressSuggestionRequest(
-    query: String,
-    count: Int = 10,
-    language: String? = null
+        query: String,
+        count: Int = 10,
+        language: String? = null
 ) : DadataRequest<DadataAddressResponse> {
     @SerializedName("query")
     @Expose
@@ -24,11 +24,11 @@ class AddressSuggestionRequest(
 
     @SerializedName("locations")
     @Expose
-    private var constraints: List<AddressSuggestionConstraint>? = null
+    private var constraints: MutableList<AddressSuggestionConstraint>? = null
 
-    @SerializedName("locations")
+    @SerializedName("locations_boost")
     @Expose
-    private var regionPriority: List<RegionPriority>? = null
+    private var regionPriority: MutableList<RegionPriority>? = null
 
     @SerializedName("from_bound")
     @Expose
@@ -59,8 +59,18 @@ class AddressSuggestionRequest(
         return this
     }
 
+    fun addConstraint(constraint: AddressSuggestionConstraint): AddressSuggestionRequest {
+        this.constraints?.add(constraint) ?: { this.constraints = mutableListOf(constraint) }()
+        return this
+    }
+
     fun setConstraints(constraints: List<AddressSuggestionConstraint>): AddressSuggestionRequest {
         this.constraints = constraints as MutableList<AddressSuggestionConstraint>
+        return this
+    }
+
+    fun addRegionPriority(priority: RegionPriority): AddressSuggestionRequest {
+        regionPriority?.add(priority) ?: { regionPriority = mutableListOf(priority) }()
         return this
     }
 
@@ -70,7 +80,7 @@ class AddressSuggestionRequest(
     }
 
     fun setUpperBound(bound: BoundLevel?): AddressSuggestionRequest {
-        upperBound = if (bound != null){
+        upperBound = if (bound != null) {
             BoundConstraint(bound)
         } else {
             null
@@ -79,7 +89,7 @@ class AddressSuggestionRequest(
     }
 
     fun setLowerBound(bound: BoundLevel?): AddressSuggestionRequest {
-        lowerBound = if (bound != null){
+        lowerBound = if (bound != null) {
             BoundConstraint(bound)
         } else {
             null
@@ -102,5 +112,5 @@ class AddressSuggestionRequest(
     fun shouldTrimRegion() = trimRegion
 
     override fun buildCall(forClient: ApiService): Call<DadataAddressResponse> =
-        forClient.getSuggestions(this)
+            forClient.getSuggestions(this)
 }
