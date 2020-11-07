@@ -26,8 +26,6 @@ class DadataSuggestions(private val token: String) {
     }
 
     fun suggest(request: AddressSuggestionRequest,
-                count: Int = 10,
-                language: String? = null,
                 completion: ((DadataAddressResponse) -> Unit)? = null) {
         performRequest(request, completion)
     }
