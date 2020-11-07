@@ -3,7 +3,7 @@ package app.illabo.dadatasuggestions.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class BoundConstraint(
+data class BoundConstraint(
     @SerializedName("value")
     @Expose
     val level: BoundLevel

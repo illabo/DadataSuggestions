@@ -24,11 +24,11 @@ class AddressSuggestionRequest(
 
     @SerializedName("locations")
     @Expose
-    private var constraints = mutableListOf<AddressSuggestionConstraint>()
+    private var constraints: List<AddressSuggestionConstraint>? = null
 
     @SerializedName("locations")
     @Expose
-    private var regionPriority = mutableListOf<RegionPriority>()
+    private var regionPriority: List<RegionPriority>? = null
 
     @SerializedName("from_bound")
     @Expose
@@ -59,22 +59,8 @@ class AddressSuggestionRequest(
         return this
     }
 
-    fun addConstraint(constraint: AddressSuggestionConstraint?): AddressSuggestionRequest {
-        if (constraint != null) {
-            this.constraints.add(constraint)
-        }
-        return this
-    }
-
     fun setConstraints(constraints: List<AddressSuggestionConstraint>): AddressSuggestionRequest {
         this.constraints = constraints as MutableList<AddressSuggestionConstraint>
-        return this
-    }
-
-    fun addRegionPriority(priority: RegionPriority?): AddressSuggestionRequest {
-        if (priority != null) {
-            this.regionPriority.add(priority)
-        }
         return this
     }
 
