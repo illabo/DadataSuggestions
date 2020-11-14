@@ -25,4 +25,4 @@ dadataClient.reverseGeocode(
     it.suggestions.first().unrestricted_value
 ) }
 ```
-You may also want to add `-keep class app.illabo.dadatasuggestions.** {*;}` to your project's proguard-rules.pro. Sometimes a crash may be occurred if minification is enabled for this library. It happens when the `completion` passed on calls to `DadataSuggestions` class' methods [raises a NullPointerException in coroutine](https://github.com/Kotlin/kotlinx.coroutines/issues/910).
+You may also want to add `-keepclassmembers class app.illabo.dadatasuggestions.** {*;}` to your project's proguard-rules.pro. Sometimes a crash may be occurred if minification is enabled for this library. It happens when the `completion` passed on calls to `DadataSuggestions` class' methods [raises a NullPointerException in coroutine](https://github.com/Kotlin/kotlinx.coroutines/issues/910).
