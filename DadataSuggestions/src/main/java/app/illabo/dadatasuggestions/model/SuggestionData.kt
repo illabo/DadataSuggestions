@@ -49,6 +49,7 @@ data class SuggestionData(
 		@SerializedName("fias_id") val fias_id: String?,
 		@SerializedName("fias_level") val fias_level: String?,
 		@SerializedName("flat") val flat: String?,
+		@SerializedName("flat_fias_id") val flat_fias_id: String?,
 		@SerializedName("flat_area") val flat_area: String?,
 		@SerializedName("flat_price") val flat_price: String?,
 		@SerializedName("flat_type") val flat_type: String?,
